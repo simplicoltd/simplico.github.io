@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SimpliCo Ltd — Everyday Essentials on Amazon UK</title>
+<meta name="description" content="SimpliCo Ltd is a small UK business selling everyday essential products on Amazon. Genuine branded stock, sourced from authorised UK wholesalers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --slate:   #2c3e35;
+  --ink:     #1c1c1a;
+  --ink2:    #4a4a46;
+  --ink3:    #8a8a84;
+  --mid:     #7a9e88;
+  --bg:      #f9f8f5;
+  --white:   #ffffff;
+  --rule:    #e2dfd8;
+  --rule2:   #ccc9c0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(249,248,245,0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 48px;
+}
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+}
+.logo-mark {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.logo-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.2px;
+}
+.logo-name span { color: var(--mid); font-weight: 300; }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink2);
+  text-decoration: none;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--slate); }
+.nav-amazon {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--mid);
+  padding-bottom: 1px;
+  transition: color .15s, border-color .15s;
+}
+.nav-amazon:hover { color: var(--ink); border-color: var(--ink); }
+
+/* ── DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+.divider-mark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.4;
+}
+
+/* ── HERO ── */
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 80px 48px 72px;
+}
+.hero h1 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  max-width: 560px;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--slate);
+}
+.hero-body {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--ink2);
+  max-width: 460px;
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+.hero-body strong { font-weight: 500; color: var(--ink); }
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--slate);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 26px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background .15s;
+}
+.hero-link:hover { background: var(--ink); }
+.hero-link svg { transition: transform .15s; }
+.hero-link:hover svg { transform: translateX(3px); }
+
+/* ── ABOUT ── */
+.about {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 48px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.about-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  padding-top: 5px;
+}
+.about-content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+.about-content p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ink2);
+  line-height: 1.8;
+  margin-bottom: 14px;
+  max-width: 540px;
+}
+.about-content p:last-child { margin-bottom: 0; }
+.about-content p strong { font-weight: 500; color: var(--ink); }
+
+/* ── WHAT WE SELL ── */
+.products {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 48px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.products-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  padding-top: 5px;
+}
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.product-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+  padding-right: 24px;
+}
+.product-item:nth-child(even) { padding-right: 0; padding-left: 24px; border-left: 1px solid var(--rule); }
+.product-item h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.product-item p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--ink3);
+  line-height: 1.55;
+}
+
+/* ── HOW TO BUY ── */
+.howtobuy {
+  background: var(--slate);
+  padding: 64px 48px;
+}
+.howtobuy-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.howtobuy-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  padding-top: 5px;
+}
+.howtobuy-content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.howtobuy-content > p {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 36px;
+  line-height: 1.75;
+  max-width: 480px;
+}
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.step {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  align-items: flex-start;
+}
+.step-n {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--mid);
+  line-height: 1;
+  padding-top: 3px;
+  min-width: 28px;
+}
+.step h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 3px;
+}
+.step p {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+.amazon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  background: #ff9900;
+  color: #111;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 11px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: opacity .15s;
+  letter-spacing: .01em;
+}
+.amazon-btn:hover { opacity: 0.88; }
+
+/* ── CONTACT ── */
+.contact {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 64px 48px 80px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.contact-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  padding-top: 5px;
+}
+.contact-content h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.contact-content > p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ink2);
+  margin-bottom: 32px;
+  line-height: 1.75;
+  max-width: 460px;
+}
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.contact-row {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+.contact-key {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink3);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  min-width: 90px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+.contact-val {
+  font-size: 14px;
+  color: var(--ink);
+}
+.contact-val a {
+  color: var(--slate);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule2);
+  transition: border-color .15s, color .15s;
+}
+.contact-val a:hover { color: var(--ink); border-color: var(--ink2); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 28px 48px;
+}
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+.footer-logo-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink2);
+}
+.footer-logo-name span { font-weight: 300; color: var(--ink3); }
+footer p {
+  font-size: 12px;
+  color: var(--ink3);
+  line-height: 1.7;
+}
+footer a { color: var(--ink3); text-decoration: none; }
+footer a:hover { color: var(--ink2); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .divider { padding: 0 20px; }
+  .hero { padding: 56px 20px 48px; }
+  .about, .products, .contact { padding: 48px 20px; grid-template-columns: 1fr; gap: 20px; }
+  .howtobuy { padding: 48px 20px; }
+  .howtobuy-inner { grid-template-columns: 1fr; gap: 20px; }
+  .product-list { grid-template-columns: 1fr; }
+  .product-item:nth-child(even) { padding-left: 0; padding-right: 0; border-left: none; }
+  footer { padding: 24px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="28" rx="6" fill="#2c3e35"/>
+        <rect x="6" y="9"  width="16" height="2.2" rx="1.1" fill="white"/>
+        <rect x="6" y="13" width="11" height="2.2" rx="1.1" fill="white" opacity=".65"/>
+        <rect x="6" y="17" width="14" height="2.2" rx="1.1" fill="white" opacity=".35"/>
+      </svg>
+      <span class="logo-name">Simpli<span>Co</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">What we sell</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.amazon.co.uk" target="_blank" rel="noopener" class="nav-amazon">Find us on Amazon →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Good products.<br><em>Straightforward</em> to buy.</h1>
+  <p class="hero-body">
+    SimpliCo is a small UK business selling <strong>everyday essential products</strong> through Amazon UK.
+    We buy from authorised UK wholesalers, so everything we sell is the real thing — properly sourced, properly invoiced, and sent to you via Amazon's own fulfilment network.
+  </p>
+  <a href="https://www.amazon.co.uk" target="_blank" rel="noopener" class="hero-link">
+    Find us on Amazon
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg class="divider-mark" viewBox="0 0 28 28" fill="none">
+    <rect width="28" height="28" rx="6" fill="#2c3e35"/>
+    <rect x="6" y="9"  width="16" height="2.2" rx="1.1" fill="white"/>
+    <rect x="6" y="13" width="11" height="2.2" rx="1.1" fill="white" opacity=".65"/>
+    <rect x="6" y="17" width="14" height="2.2" rx="1.1" fill="white" opacity=".35"/>
+  </svg>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-label">About us</div>
+  <div class="about-content">
+    <h2>Built on one simple idea</h2>
+    <p>
+      SimpliCo Ltd was founded with a straightforward premise: sell everyday products on Amazon the right way.
+      That means sourcing only from <strong>authorised UK wholesalers</strong>, maintaining proper records, and never cutting corners on compliance.
+    </p>
+    <p>
+      Every product listed under the SimpliCo name comes from a legitimate, verified source — properly invoiced and accurately described.
+      Orders are fulfilled through Amazon, so buyers have the same protections and delivery standards they'd expect from any Amazon purchase.
+    </p>
+    <p>
+      SimpliCo Ltd is a registered company in England and Wales. Contact details are in the section below.
+    </p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg class="divider-mark" viewBox="0 0 28 28" fill="none">
+    <rect width="28" height="28" rx="6" fill="#2c3e35"/>
+    <rect x="6" y="9"  width="16" height="2.2" rx="1.1" fill="white"/>
+    <rect x="6" y="13" width="11" height="2.2" rx="1.1" fill="white" opacity=".65"/>
+    <rect x="6" y="17" width="14" height="2.2" rx="1.1" fill="white" opacity=".35"/>
+  </svg>
+</div>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-label">What we sell</div>
+  <div>
+    <p style="font-size:16px;font-weight:300;color:var(--ink2);line-height:1.8;max-width:540px;margin-bottom:24px;">
+      We sell everyday essential products — the kind of things people buy regularly, from brands they already know and trust.
+      Our range grows as we find products that meet our sourcing criteria: genuine branded stock, available from authorised UK distributors, at a price that makes sense for buyers on Amazon.
+    </p>
+    <p style="font-size:15px;font-weight:300;color:var(--ink2);line-height:1.8;max-width:540px;margin-bottom:24px;">
+      We don't chase trends or sell anything we can't source properly. If it's listed under the SimpliCo name on Amazon, it came from a legitimate UK wholesaler with a proper VAT invoice — that's the only rule we work to.
+    </p>
+    <p style="font-size:13px;color:var(--ink3);font-weight:300;line-height:1.7;max-width:480px;">
+      Our range is still small. We're building it carefully rather than quickly. Visit our Amazon storefront to see what's currently listed.
+    </p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg class="divider-mark" viewBox="0 0 28 28" fill="none">
+    <rect width="28" height="28" rx="6" fill="#2c3e35"/>
+    <rect x="6" y="9"  width="16" height="2.2" rx="1.1" fill="white"/>
+    <rect x="6" y="13" width="11" height="2.2" rx="1.1" fill="white" opacity=".65"/>
+    <rect x="6" y="17" width="14" height="2.2" rx="1.1" fill="white" opacity=".35"/>
+  </svg>
+</div>
+
+<!-- HOW TO BUY -->
+<section class="howtobuy" id="howtobuy">
+  <div class="howtobuy-inner">
+    <div class="howtobuy-label">How to order</div>
+    <div class="howtobuy-content">
+      <h2>Everything ships through Amazon</h2>
+      <p>We don't take orders directly — all our stock is sent to Amazon's warehouse and fulfilled by them. That means the usual Amazon experience: tracked delivery, easy returns, and standard buyer protection on every order.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">1</div>
+          <div>
+            <h3>Search for SimpliCo on Amazon UK</h3>
+            <p>Go to amazon.co.uk and search "SimpliCo" to find our current listings.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div>
+            <h3>Add to basket and check out as normal</h3>
+            <p>Amazon handles the payment, packing, and dispatch — exactly as you'd expect.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div>
+            <h3>Any issues — contact us or Amazon</h3>
+            <p>For product questions, email us directly. For order or delivery issues, Amazon's own support is usually fastest.</p>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.amazon.co.uk" target="_blank" rel="noopener" class="amazon-btn">
+        Shop on Amazon UK
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true">
+  <svg class="divider-mark" viewBox="0 0 28 28" fill="none">
+    <rect width="28" height="28" rx="6" fill="#2c3e35"/>
+    <rect x="6" y="9"  width="16" height="2.2" rx="1.1" fill="white"/>
+    <rect x="6" y="13" width="11" height="2.2" rx="1.1" fill="white" opacity=".65"/>
+    <rect x="6" y="17" width="14" height="2.2" rx="1.1" fill="white" opacity=".35"/>
+  </svg>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-label">Contact</div>
+  <div class="contact-content">
+    <h2>Get in touch</h2>
+    <p>We're a small team and we read every email. If you have a question about a product, a wholesale enquiry, or anything else — just drop us a line.</p>
+    <div class="contact-detail">
+      <div class="contact-row">
+        <div class="contact-key">Email</div>
+        <div class="contact-val"><a href="mailto:info@simplico.co.uk">info@simplico.co.uk</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Website</div>
+        <div class="contact-val">simplico.co.uk</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Amazon</div>
+        <div class="contact-val"><a href="https://www.amazon.co.uk" target="_blank" rel="noopener">amazon.co.uk — search SimpliCo</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-key">Company</div>
+        <div class="contact-val">Simplico Ltd — registered in England &amp; Wales</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="footer-logo">
+      <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+        <rect width="28" height="28" rx="6" fill="#2c3e35"/>
+        <rect x="6" y="9"  width="16" height="2.2" rx="1.1" fill="white"/>
+        <rect x="6" y="13" width="11" height="2.2" rx="1.1" fill="white" opacity=".65"/>
+        <rect x="6" y="17" width="14" height="2.2" rx="1.1" fill="white" opacity=".35"/>
+      </svg>
+      <span class="footer-logo-name">Simpli<span>Co</span> Ltd</span>
+    </a>
+    <p>© 2026 Simplico Ltd. Registered in England &amp; Wales. &nbsp;·&nbsp; <a href="mailto:info@simplico.co.uk">info@simplico.co.uk</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
